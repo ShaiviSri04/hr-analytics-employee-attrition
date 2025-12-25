@@ -13,3 +13,7 @@ SELECT
     SUM(CASE WHEN attrition_flag = TRUE THEN 1 ELSE 0 END),
     COUNT(*)
   ) AS attrition_rate
+
+FROM `level-footing-481113-s9.hr_analytics.employee_base`
+GROUP BY manager_support_bucket
+ORDER BY attrition_rate DESC
